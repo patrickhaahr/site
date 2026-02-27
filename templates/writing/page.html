@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} — Patrick Haahr</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+            --color-bg: #18181b;
+            --color-fg: #f4f4f5;
+            --color-muted: #a1a1aa;
+            --color-subtle: #3f3f46;
+            --color-accent: #facc15;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-fg);
+            font-family: var(--font-sans);
+        }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.75; color: #a1a1aa; }
+        .prose p:last-child { margin-bottom: 0; }
+        ::selection { background-color: var(--color-accent); color: var(--color-bg); }
+    </style>
+</head>
+<body class="min-h-[100dvh] flex justify-center p-4 md:p-8">
+    <main class="w-full max-w-[800px] border border-[#3f3f46]/50 bg-[#121214] p-6 md:p-10 shadow-2xl">
+
+        <div class="mb-8">
+            <a href="/#writing" class="font-mono text-xs text-[#a1a1aa] hover:text-[#facc15] transition-colors uppercase tracking-widest">← Writing</a>
+        </div>
+
+        <header class="mb-10 border-b border-dashed border-[#3f3f46] pb-8">
+            <h1 class="font-mono text-2xl font-bold text-[#f4f4f5] mb-3">{{ page.title }}</h1>
+            <time class="font-mono text-xs text-[#a1a1aa]/60">{{ page.date | date(format="%Y.%m.%d") }}</time>
+        </header>
+
+        <article class="prose max-w-none">
+            {{ page.content | safe }}
+        </article>
+
+        <footer class="mt-12 pt-8 border-t border-[#3f3f46] font-mono text-[10px] text-[#a1a1aa] uppercase">
+            <a href="/" class="hover:text-[#facc15] transition-colors">haahr.me</a>
+        </footer>
+
+    </main>
+</body>
+</html>

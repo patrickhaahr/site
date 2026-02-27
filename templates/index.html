@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Haahr</title>
+    <link rel="icon" type="image/svg+xml" href="/op.svg">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: "Inter", sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+            --color-bg: #18181b;
+            --color-fg: #f4f4f5;
+            --color-muted: #a1a1aa;
+            --color-subtle: #3f3f46;
+            --color-accent: #facc15;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-fg);
+            font-family: var(--font-sans);
+        }
+
+        .line-divide {
+            border-bottom: 1px dashed var(--color-subtle);
+        }
+
+        .stagger-row {
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .typewriter::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: var(--color-accent);
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .bracket-link {
+            position: relative;
+            padding: 0 4px;
+            transition: color 0.2s;
+        }
+        .bracket-link::before,
+        .bracket-link::after {
+            position: absolute;
+            opacity: 0;
+            color: var(--color-accent);
+            transition: opacity 0.2s, transform 0.2s;
+            font-family: var(--font-mono);
+            font-weight: 800;
+        }
+        .bracket-link::before {
+            content: '[';
+            left: -8px;
+            transform: translateX(4px);
+        }
+        .bracket-link::after {
+            content: ']';
+            right: -8px;
+            transform: translateX(-4px);
+        }
+        .bracket-link:hover::before,
+        .bracket-link:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        ::selection {
+            background-color: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        * {
+            scrollbar-width: none;
+        }
+        *::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-[100dvh] flex justify-center p-4 md:p-8">
+
+    <main class="w-full max-w-[800px] border border-subtle/50 bg-[#121214] p-6 md:p-10 shadow-2xl relative stagger-row">
+
+        <!-- Header -->
+        <header class="mb-10 line-divide pb-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
+                <h1 class="text-3xl font-mono font-bold tracking-tight text-fg typewriter">Patrick.Haahr</h1>
+
+            </div>
+            <p class="text-sm text-muted max-w-[60ch] leading-relaxed">
+                Strong drive for privacy and security.<br>
+                From fullstack engineering to embedded systems to homelabbing.
+            </p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="font-mono text-xs uppercase tracking-widest flex flex-wrap gap-6 mb-12 stagger-row" style="animation-delay: 100ms;">
+            <span class="bracket-link text-fg font-bold">~ / Home</span>
+            <a href="#experience" class="bracket-link text-muted hover:text-fg">~ / Experience</a>
+            <a href="#projects" class="bracket-link text-muted hover:text-fg">~ / Projects</a>
+            <a href="#writings" class="bracket-link text-muted hover:text-fg">~ / Writings</a>
+        </nav>
+
+        <!-- Experience -->
+        <section id="experience" class="mb-16">
+            <div class="flex items-center gap-2 mb-6 stagger-row" style="animation-delay: 200ms;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" shape-rendering="geometricPrecision" style="color: var(--color-accent);"><rect width="256" height="256" fill="none"/><polyline points="40 64 112 128 40 192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><line x1="120" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>
+                <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Experience</h2>
+            </div>
+
+            <div class="flex flex-col">
+                <article class="group py-5 line-divide flex flex-col gap-2 stagger-row" style="animation-delay: 300ms;">
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+                        <span class="text-base text-fg font-medium">Junior Software Developer</span>
+                        <span class="font-mono text-[10px] uppercase text-accent/70">Timengo / Enforce365</span>
+                        <time class="font-mono text-xs text-muted/60 md:ml-auto">Dec 2024 – Present</time>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed">
+                        Internal tooling with .NET, Rust, Dynamics 365. Resolved an N+1 bottleneck — 500k+ server roundtrips reduced to a single batch SQL query, cutting execution time from 10m to 5s (99.1% improvement). Architected greenfield system with Clean Architecture, React, Azure Functions, and Entra ID OAuth.
+                    </p>
+                </article>
+
+                <article class="group py-5 line-divide flex flex-col gap-2 stagger-row" style="animation-delay: 380ms;">
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+                        <span class="text-base text-fg font-medium">Freelance Developer</span>
+                        <span class="font-mono text-[10px] uppercase text-muted/50">Independent</span>
+                        <time class="font-mono text-xs text-muted/60 md:ml-auto">Feb 2026 – Present</time>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed">
+                        Static marketing websites using Astro and Tailwind, deployed via Cloudflare Pages.
+                    </p>
+                </article>
+
+                <article class="group py-5 flex flex-col gap-2 stagger-row" style="animation-delay: 460ms;">
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+                        <span class="text-base text-fg font-medium">Frontend Developer Intern</span>
+                        <span class="font-mono text-[10px] uppercase text-muted/50">CAS Training</span>
+                        <time class="font-mono text-xs text-muted/60 md:ml-auto">May – Jun 2023</time>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed">
+                        Prototyped UI/UX improvements. Attended Google Cloud Summit.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mb-12">
+            <div class="flex items-center gap-2 mb-6 stagger-row" style="animation-delay: 540ms;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" shape-rendering="geometricPrecision" style="color: var(--color-accent);"><rect width="256" height="256" fill="none"/><path d="M80,168V144a16,16,0,0,1,16-16h88a16,16,0,0,0,16-16V88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="18"/><line x1="80" y1="88" x2="80" y2="168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><circle cx="80" cy="64" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><circle cx="200" cy="64" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><circle cx="80" cy="192" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>
+                <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Projects</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:grid-rows-[auto_1fr]">
+
+                <div class="stagger-row flex flex-col" style="animation-delay: 620ms;">
+                    <div class="flex items-center justify-between mb-2">
+                        <a href="https://github.com/patrickhaahr/openhome" target="_blank" rel="noopener" class="font-mono text-sm text-fg font-bold hover:underline decoration-accent underline-offset-4">OpenHome</a>
+                        <span class="font-mono text-[10px] text-muted/50">Jan 2026</span>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed mb-2">
+                        Secure homelab control system — mobile app + Axum API on RPi, accessed over Tailscale. Manages Docker, AdGuard Home, and RSS feeds. API keys encrypted at rest with IOTA Stronghold, decrypted only after biometric auth and cached in memory with auto-lock.
+                    </p>
+                    <div class="font-mono text-[10px] text-muted/40 mt-auto">Tauri · Axum · SolidJS · Rust</div>
+                </div>
+
+                <div class="stagger-row flex flex-col" style="animation-delay: 700ms;">
+                    <div class="flex items-center justify-between mb-2">
+                        <a href="https://github.com/patrickhaahr/esp32-wifi-sniffer" target="_blank" rel="noopener" class="font-mono text-sm text-fg font-bold hover:underline decoration-accent underline-offset-4">ESP32 WiFi Sniffer</a>
+                        <span class="font-mono text-[10px] text-muted/50">Dec 2025</span>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed mb-2">
+                        Privacy-first WiFi tracker via ESP32 promiscuous mode. SHA-256 MAC hashing for GDPR. Real-time dashboard using RSSI trilateration and gradient descent. An Axum server serves an HTML canvas UI that visualises tracked device positions live over WebSocket.
+                    </p>
+                    <div class="font-mono text-[10px] text-muted/40 mt-auto">ESP32 · Axum · MQTT/WS · Rust</div>
+                </div>
+
+                <div class="stagger-row flex flex-col" style="animation-delay: 780ms;">
+                    <div class="flex items-center justify-between mb-2">
+                        <a href="https://github.com/patrickhaahr/bevy-multiplayer-3d" target="_blank" rel="noopener" class="font-mono text-sm text-fg font-bold hover:underline decoration-accent underline-offset-4">Bevy Multiplayer 3D</a>
+                        <span class="font-mono text-[10px] text-muted/50">Nov 2025</span>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed mb-2">
+                        Server-authoritative multiplayer 3D game with AI enemies using flocking behavior and finite state machines. Custom game logic runs on a dedicated Rust server; assets modelled in Blender.
+                    </p>
+                    <div class="font-mono text-[10px] text-muted/40 mt-auto">Bevy · Blender · Rust</div>
+                </div>
+
+                <div class="stagger-row flex flex-col" style="animation-delay: 860ms;">
+                    <div class="flex items-center justify-between mb-2">
+                        <a href="https://www.docubotai.app/" target="_blank" rel="noopener" class="font-mono text-sm text-fg font-bold hover:underline decoration-accent underline-offset-4">DocuBot</a>
+                        <span class="font-mono text-[10px] text-muted/50">Apr – Aug 2025</span>
+                    </div>
+                    <p class="text-sm text-muted/80 leading-relaxed mb-2">
+                        Automated documentation platform with OAuth integrations — ingests repos and publishes to GitHub, Azure DevOps, Confluence, and export formats. RAG-based AI agent for semantic search and Q&A, JWT auth with per-user query isolation.
+                    </p>
+                    <div class="font-mono text-[10px] text-muted/40 mt-auto">Next.js · LangChain · Supabase · Stripe · TypeScript</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Writings -->
+        <section id="writings" class="mb-12">
+            <div class="flex items-center gap-2 mb-6 stagger-row" style="animation-delay: 860ms;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" shape-rendering="geometricPrecision" style="color: var(--color-accent);"><rect width="256" height="256" fill="none"/><polyline points="216 216 96 216 40.51 160.51" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="164" y1="92" x2="68" y2="188" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><path d="M96,216H48a8,8,0,0,1-8-8V163.31a8,8,0,0,1,2.34-5.65L165.66,34.34a8,8,0,0,1,11.31,0L221.66,79a8,8,0,0,1,0,11.31Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><line x1="136" y1="64" x2="192" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>
+                <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Writings</h2>
+            </div>
+            {% set writing = get_section(path="writing/_index.md") %}
+            {% if writing.pages %}
+            <div class="flex flex-col">
+                {% for post in writing.pages %}
+                <a href="{{ post.permalink }}" class="group py-4 line-divide flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 stagger-row" style="animation-delay: 940ms;">
+                    <time class="font-mono text-xs text-muted/60 min-w-[140px]">{{ post.date | date(format="%Y.%m.%d") }}</time>
+                    <span class="text-sm text-fg group-hover:text-accent transition-colors">{{ post.title }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="py-6 border border-dashed border-subtle/40 flex flex-col items-center justify-center gap-2 text-center stagger-row" style="animation-delay: 940ms;">
+                <span class="font-mono text-xs text-muted/40">// no posts yet</span>
+            </div>
+            {% endif %}
+        </section>
+
+        <footer class="mt-12 pt-8 border-t border-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-[10px] text-muted uppercase stagger-row" style="animation-delay: 1020ms;">
+            <div class="flex gap-5">
+                <button data-email="c2l0ZUBoYWFoci5tZQ==" id="copy-email-btn" class="bracket-link hover:text-fg transition-colors cursor-pointer">SITE[AT]HAAHR.ME</button>
+                <a href="https://github.com/patrickhaahr" target="_blank" rel="noopener" class="bracket-link hover:text-fg transition-colors">GitHub</a>
+            </div>
+            <div class="flex gap-4">
+                <span>OS: Arch Linux</span>
+                <span>LANG: Rust/C#/TS</span>
+            </div>
+        </footer>
+
+    </main>
+    <script>
+        document.getElementById('copy-email-btn').addEventListener('click', function () {
+            const email = atob(this.dataset.email);
+            navigator.clipboard.writeText(email).then(() => {
+                const orig = this.textContent;
+                this.textContent = 'COPIED!';
+                setTimeout(() => this.textContent = orig, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  
+  <g id="jolly-roger" transform="translate(500, 460) scale(1.65)" stroke="#0a0a0a" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    
+    <!-- Bones -->
+    <g id="crossbones" fill="#4a4a4a">
+      <!-- Bone 1 (Top-Left to Bottom-Right) -->
+      <g transform="rotate(40)">
+        <path d="M -265 -35 L 265 -35 A 55 55 0 1 1 358 0 A 55 55 0 1 1 265 35 L -265 35 A 55 55 0 1 1 -358 0 A 55 55 0 1 1 -265 -35 Z" />
+      </g>
+      <!-- Bone 2 (Top-Right to Bottom-Left) -->
+      <g transform="rotate(-40)">
+        <path d="M -265 -35 L 265 -35 A 55 55 0 1 1 358 0 A 55 55 0 1 1 265 35 L -265 35 A 55 55 0 1 1 -358 0 A 55 55 0 1 1 -265 -35 Z" />
+      </g>
+    </g>
+    <!-- Skull -->
+    <g id="skull" fill="#555555">
+      <!-- Lower Jaw -->
+      <path d="M -65 220 A 65 65 0 0 0 65 220 Z" />
+      <!-- Teeth Base -->
+      <path d="M -100 120 L -65 220 Q 0 250 65 220 L 100 120 Z" />
+      <!-- Upper Skull -->
+      <circle cx="0" cy="0" r="160" />
+    </g>
+    <!-- Hat -->
+    <g id="hat">
+      <!-- Dome -->
+      <path d="M -160 -40 A 160 140 0 0 1 160 -40 Z" fill="#444444" />
+      <!-- Band -->
+      <path d="M -160 -40 L -145 -90 L 145 -90 L 160 -40 Z" fill="#222222" />
+      <!-- Rim -->
+      <rect x="-270" y="-40" width="540" height="30" rx="15" fill="#444444" />
+    </g>
+    <!-- Face Details -->
+    <!-- Eyes -->
+    <circle cx="-65" cy="45" r="45" fill="#0a0a0a" stroke="none" />
+    <circle cx="65" cy="45" r="45" fill="#0a0a0a" stroke="none" />
+    
+    <!-- Nose -->
+    <circle cx="0" cy="115" r="15" fill="#0a0a0a" stroke="none" />
+    <!-- Mouth / Teeth -->
+    <g id="mouth">
+      <!-- Horizontal line -->
+      <path d="M -82 170 Q 0 226 82 170" fill="none" />
+      <!-- Vertical lines -->
+      <path d="M -50 152 L -32 231" fill="none" />
+      <path d="M 0 160 L 0 235" fill="none" />
+      <path d="M 50 152 L 32 231" fill="none" />
+    </g>
+    
+  </g>
+</svg>

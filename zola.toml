@@ -1,0 +1,9 @@
+base_url = "https://haahr.me"
+compile_sass = false
+build_search_index = false
+
+[markdown]
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
